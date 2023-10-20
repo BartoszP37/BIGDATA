@@ -1,6 +1,6 @@
 from mrjob.job import MRJob
 
-class MovieRatingAverage(MRJob):
+class mapreduce(MRJob):
     def mapper(self, _, line):
         if not hasattr(self, 'movie_titles'):
             self.movie_titles = {}
@@ -27,7 +27,7 @@ class MovieRatingAverage(MRJob):
         yield movie_title, average_rating
 
 if __name__ == '__main__':
-    MovieRatingAverage.run()
+    mapreduce.run()
 
 
 
